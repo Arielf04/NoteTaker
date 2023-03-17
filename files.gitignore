@@ -1,0 +1,4 @@
+# Ignore all .pdf files
+*.pdf
+
+config.py
