@@ -1,18 +1,20 @@
 import pdfplumber
 
-pdf_path = ""
-startPage = 3
-endPage = 10
+pdf_file_path = ''
 
-def get_page_range(startPage, endPage):
-    return list(range(startPage, endPage + 1))
+def get_page_range(user_pages):
+    if not user_pages:
+        return None
+    user_pages_split = user_pages.split(',')
+    user_pages_split_as_int = [int(x) for x in user_pages_split]
+    return list(range(user_pages_split_as_int[0] - 1, user_pages_split_as_int[1]))
 
-pages = get_page_range(startPage, endPage)
-
-def parse_text_from_pdf(pdf_file_path, pages_to_parse=None):
+def parse_text_from_pdf(user_pages):
     # Initialize an empty string to store the parsed text
     parsed_text = ''
 
+    pages_to_parse = get_page_range(user_pages)
+    
     # Open the PDF file with pdfplumber
     with pdfplumber.open(pdf_file_path) as pdf:
         # Get the total number of pages in the PDF
@@ -31,8 +33,6 @@ def parse_text_from_pdf(pdf_file_path, pages_to_parse=None):
             else:
                 print(f"Page number {page_num} is out of range.")
 
-    return parsed_text
+    print(parsed_text)
 
-# Example usage:
-parsed_text = parse_text_from_pdf(pdf_path, pages)
-print(parsed_text)
+    return parsed_text

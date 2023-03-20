@@ -1,5 +1,4 @@
 # PDF Note Generator with ChatGPT API
-An app to automatically take notes from books for me
 
 ## Overview
 
