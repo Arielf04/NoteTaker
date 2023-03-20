@@ -1,6 +1,5 @@
 import pdfplumber
 
-pdf_path = 'E:\\NoteTaker\\4hour_chef.pdf'
 startPage = 3
 endPage = 10
 
