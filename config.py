@@ -1,1 +1,0 @@
-nanonets_api_key = '6ce5c369-c470-11ed-8e8e-120a5e555bf5'
