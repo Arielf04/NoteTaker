@@ -25,10 +25,13 @@ frame.pack(expand=True)
 
 # Create and place the labels
 tk.Label(frame, text="Pages:", font=custom_font).grid(row=0, column=0, sticky=tk.W)
+tk.Label(frame, text="API key:", font=custom_font).grid(row=1, column=0, sticky=tk.W)
 
 # Create and place the entry fields
 entry1 = tk.Entry(frame, font=custom_font)
 entry1.grid(row=0, column=1, padx=5, pady=10)
+entry2 = tk.Entry(frame, font=custom_font)
+entry2.grid(row=1, column=1, padx=5, pady=10)
 
 def on_combobox_selected(event):
     selected_option = combobox.get()

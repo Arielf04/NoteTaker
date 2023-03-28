@@ -1,4 +1,5 @@
 import pdfplumber
+import openai
 
 pdf_file_path = ''
 
@@ -36,3 +37,17 @@ def parse_text_from_pdf(user_pages):
     print(parsed_text)
 
     return parsed_text
+
+def call_chatgpt_api(parsed_text, api_key):
+    openai.api_key = api_key
+
+    response = openai.Completion.create(
+        model="text-davinci-003",
+        prompt="Summarize the following information in bullet points: " + parsed_text,
+        max_tokens=256,
+        n=1,
+        stop=None,
+        temperature=0.5,
+    )
+
+    print(response.choices[0].text.strip())
