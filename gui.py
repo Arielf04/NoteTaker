@@ -61,7 +61,7 @@ browse_button = tk.Button(frame, text="Browse", command=browse_file, font=custom
 browse_button.grid(row=4, column=0, columnspan=1, padx=10, pady=10, sticky='nsew')
 
 # Create and place the browse file button
-take_notes_button = tk.Button(frame, text="Take notes", font=custom_font, command=lambda: PDFReader.parse_text_from_pdf(entry1.get()))
+take_notes_button = tk.Button(frame, text="Take notes", font=custom_font, command=lambda: PDFReader.take_notes(entry1.get()))
 take_notes_button.grid(row=4, column=1, columnspan=1, padx=10, pady=10, sticky='nsew')
 
 frame.columnconfigure(0, weight=1)

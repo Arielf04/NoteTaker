@@ -16,6 +16,10 @@ PDF Note Generator is a Python application that automatically generates notes fr
 - Use ChatGPT API to generate notes from extracted pages
 - Save notes in text or Markdown format
 
+## How to use
+- Select a .pdf file using the browse button
+- If required, specify pages to be processed in the format 'first_page,last_page'
+
 ## Prerequisites
 
 - Python 3.6 or higher
